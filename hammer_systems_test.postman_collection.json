@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "a78e3cde-8180-485f-8dc4-e0e4abae2dca",
+		"name": "Hammer Systems Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29187056"
+	},
+	"item": [
+		{
+			"name": "1st step Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "+79112345671",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2st step Authentication (write auth code)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_code",
+							"value": "7227",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+79112345671",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/verify/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"verify",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzNzc5MDE1LCJpYXQiOjE3MTM3Nzg3MTUsImp0aSI6IjBiMjY3MzQwYmM5MjQ5ZDg4MTJkYzYxYzkwNDMwZTEzIiwidXNlcl9pZCI6Mn0.QWLA1nMgAHkKGPmh5kcD8uIBktKZKOMpQRRa7s5dfFg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/profile/invited_users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"profile",
+						"invited_users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Invite Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzNzc5MDY2LCJpYXQiOjE3MTM3Nzg3NjYsImp0aSI6ImFhZDk1MTg1MDYzZTRmYTBiYTEzZTFkOTk5ZmRkNjk3IiwidXNlcl9pZCI6M30.U4aKVQh2iU2bOfwjuobNignnte03FbT5oWCGhcsZZPg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invite_code",
+							"value": "GWTKwY",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/profile/activate_invite_code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"profile",
+						"activate_invite_code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get invited users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzNzc5MTExLCJpYXQiOjE3MTM3Nzg4MTEsImp0aSI6ImUwOWM1ZjgwNTcxYzQwMzFhY2E4MzM2NDg1ZjVhNDk2IiwidXNlcl9pZCI6Mn0.N2-lh5KoIhzp8_JZQuBy13rwJIq0mlblmd4qcIYs4JI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/profile/invited_users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"profile",
+						"invited_users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
