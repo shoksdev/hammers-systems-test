@@ -1,5 +1,7 @@
 Доброго времени суток, уважаемый проверяющий компании "Hammer Systems". Благодарю за возможность продемонстрировать свои навыки!
 
+Ссылка на выгруженный проект: https://shoksdev.pythonanywhere.com/
+
 Инструкция по запуску:
 1) Клонировать репозиторий: `git clone https://github.com/shoksdev/hammers-systems-test.git`
 2) Перейти в папку с проектом: `cd referal_system`
